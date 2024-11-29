@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseñador de Propuestas Irresistibles</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    p {
+      color: #555;
+      text-align: center;
+    }
+    .form-tool {
+      background: #f1f1f1;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    input, textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .cta h3 {
+      color: #22C0DC;
+      margin-bottom: 10px;
+    }
+    .cta a {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #01BD39;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .cta a:hover {
+      background-color: #019A31;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Diseñador de Propuestas Irresistibles</h1>
+    <p>Crea una propuesta profesional y atractiva que cautive a tus clientes potenciales.</p>
+
+    <div class="form-tool">
+      <form id="proposalForm">
+        <label for="clientName">Nombre del cliente:</label>
+        <input type="text" id="clientName" placeholder="Ejemplo: Juan Pérez" required>
+
+        <label for="service">Servicio ofrecido:</label>
+        <textarea id="service" placeholder="Ejemplo: Gestión de correos y agendas" rows="3" required></textarea>
+
+        <label for="benefit">Beneficio clave para el cliente:</label>
+        <textarea id="benefit" placeholder="Ejemplo: Ahorro de tiempo y organización eficiente" rows="3" required></textarea>
+
+        <label for="price">Precio del servicio:</label>
+        <input type="text" id="price" placeholder="Ejemplo: $500/mes" required>
+
+        <label for="delivery">Plazo de entrega (si aplica):</label>
+        <input type="text" id="delivery" placeholder="Ejemplo: 48 horas para correos prioritarios" required>
+
+        <button type="button" onclick="generateProposal()">Generar Propuesta</button>
+      </form>
+
+      <div id="result" class="result"></div>
+    </div>
+
+    <div class="cta">
+      <h3>¡Da el paso ahora y redefine tu horizonte profesional!</h3>
+      <a href="https://klicana.work/Ecpzgd">SÍ, QUIERO INSCRIBIRME AHORA EN EL CURSO</a>
+    </div>
+  </div>
+
+  <script>
+    function generateProposal() {
+      const clientName = document.getElementById('clientName').value;
+      const service = document.getElementById('service').value;
+      const benefit = document.getElementById('benefit').value;
+      const price = document.getElementById('price').value;
+      const delivery = document.getElementById('delivery').value;
+
+      if (!clientName || !service || !benefit || !price || !delivery) {
+        document.getElementById('result').innerHTML = '<span style="color: red;">Por favor, completa todos los campos.</span>';
+        return;
+      }
+
+      document.getElementById('result').innerHTML = `
+        <h3>Propuesta para ${clientName}</h3>
+        <p><strong>Servicio ofrecido:</strong> ${service}</p>
+        <p><strong>Beneficio clave:</strong> ${benefit}</p>
+        <p><strong>Precio:</strong> ${price}</p>
+        <p><strong>Plazo de entrega:</strong> ${delivery}</p>
+        <p><em>¡Esta propuesta está lista para ser enviada y captar al cliente!</em></p>
+      `;
+    }
+  </script>
+</body>
+</html>
+
